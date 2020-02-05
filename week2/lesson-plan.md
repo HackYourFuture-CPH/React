@@ -32,109 +32,84 @@
   - Keys help React identify which items have changed, are added, or are removed
   - [Index should be avoided](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)
   - [Code inspiration](#todolist-updating-state-with-list)
-- Lifecycle Methods
-  - Full list [here](https://reactjs.org/docs/react-component.html)
-    - ![react Lifecycles](assets/react-lifecycles.jpeg)
-  - Lifecycle methods are used when render is not enough on its own
-  - Cover each, giving examples of when they might be useful
-    - componentDidMount: data fetching in client-side-only apps
-    - shouldComponentUpdate: performance debugging
-    - componentWillUnmount: teardown (payment SDKs, intervals, etc)
-    - Question: in which of these lifecycle methods is it OK to call setState? (watch out for stack overflows)
+- Compponent life cycles
+  - [Using the effect hook](https://reactjs.org/docs/hooks-effect.html)
+  - Understand when useEffect is executed
+  - understand how to"clean up" useEffect code
+  - Understand when "clean up" is run
 
 [Code inspiration](#counter)
 
 ## Code inspiration
 
-### todolist (updating state with list)
-https://codesandbox.io/s/simple-todo-list-be9qu
+### Fibonacci
 
 ```js
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+function FiboCounter () {
+    
+    const [counterState, setCounterState] = useState([1]);
+  
+    const increment = () => {
+      setCounterState(prev => {
+          const pl = prev.length;
+          // the ?? means that it will use the right value if the left is "nullish" (undefined or null)
+          return [ ...prev, prev[pl -1] + (prev[pl -2] ?? 0)];
+      })
+    };
 
-class TodoList extends Component {
-  state = {
-    todos: [
-      {
-        text: "asdllll"
-      },
-      {
-        text: "testsss"
-      }
-    ]
-  };
+    const logList = counterState
+        .map((log, index) => <div key={index}>{log}</div>)
 
-  componentDidMount() {
-      console.log('componentDidMount');
-  }
-
-  componentDidUpdate() {
-      console.log('componentDidMount');   
-  }
-
-  componentWillUnmount() {
-      console.log('componentWillUnmount');
-      
-  }
-
-  addTodo = () => {
-    const newItem = { text: "lolol" };
-    const newList = this.state.todos.concat(newItem);
-    this.setState({ todos: newList }, () => {
-        console.log('state has been updated');
-        
-    });
-  };
-
-  render() {
-      console.log('render');
-      
     return (
-      <div className="App">
-        <button onClick={this.addTodo}>Add todo</button>
-        {this.state.todos.map(todo => (
-          <li>{todo.text}</li>
-        ))}
-      </div>
-    );
-  }
+        <>
+            <button onClick={increment}>{counterState.slice().pop()}</button>
+            {logList}  
+        </>
+    );  
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<TodoList />, rootElement);
+ReactDOM.render(<FiboCounter />, document.getElementById("root"));
 
 ```
 
 ## Exercise
+
+Create another version of the fibonacci counter. This shows the first 10 fibbonacci when clicking a button instead of one by one. 
+Recall what you know about state management. When calling the state change funtion, the component is automatically called again.
 
 ### Counter
 
 First understand the code in this component:
 
 ```js
-import React from 'react';
-
-class Counter extends React.Component {
-  state = { counter: this.props.initialCounter };
-
-  componentDidMount() {
-    setInterval(() => {
-      this.setState({ counter: this.state.counter + 1 });
-    }, 1000);
+function WatchCount() {
+    const [count, setCount] = useState(0);
+  
+    useEffect(() => {
+       setTimeout(() => {
+            setCount(prev => prev + 1);
+        }, 1000);
+    });
+  
+    return (
+      <div>
+        {count}
+      </div>
+    );
   }
 
-  render() {
-    return <div>
-    {this.state.counter}</div>;
-  }
-}
-
-export default Counter;
+ReactDOM.render(
+    <WatchCount/>, 
+    document.getElementById("root")
+);
 ```
 
 Now extend it with the following features:
-- A button that pauses the counter
-  - Clicking it should change the text so it says `start`. Clicking the button now should start the timer again and change the text to `pause`
 - Add a button that decrements the timer
 - Add a button that resets the counter to 0
+
+## Ekstra : 
+- A button that pauses the counter
+  - Clicking it should change the text so it says `start`. Clicking the button now should start the timer again and change the text to `pause`
+  - Also, the counter should stop immediately. Hint : you need to return a clean up function from useEffect
+- An input field that lets you set the speed of the counter. The speed should be reflected immediately on keypress and the counter should pause when entering invalid input.

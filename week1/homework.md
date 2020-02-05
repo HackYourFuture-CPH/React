@@ -2,7 +2,7 @@
 
 usign `create-react-app` create a new react project.
 
-## basic React & props
+## Basic React & props
 
 Render a basic static todo list with three items:
 
@@ -14,7 +14,14 @@ Todo List
 * Eat breakfast, Fri Sep 15 2017
 ```
 
-For each item render a description and a deadline date. Before you start draw a mockup and identify the components with colours. You have to use more than two components. Think which props the components should take.
+For each item render a description and a deadline date. Before you start draw a mockup and identify the components with colours. You have to use more than two components. Think about which props the components should take.
 
-## thinking in React
-go through this section of react official documentation https://reactjs.org/docs/thinking-in-react.html for learning how to think the react way.
+## Thinking in React
+Go through this section of react official documentation https://reactjs.org/docs/thinking-in-react.html to learng how to think the react way.
+
+## EXTRA OPTIONAL :
+
+- Write 2 versions of your todo app. First one using functions with hooks, second one using traditional classes.
+
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "react-boiler",
+  "version": "1.0.0",
+  "description": "chrome://flags/#allow-insecure-localhost",
+  "main": "main.js",
+  "scripts": {
+    "dev": "parcel index.html --https"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-polyfill": "^6.26.0",
+    "parcel-bundler": "^1.12.4"
+  }
+}

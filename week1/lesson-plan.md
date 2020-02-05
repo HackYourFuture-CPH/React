@@ -32,17 +32,42 @@
 
 - State
   - State holds all the dynamic data of the app
-  - State can only be defined in class-based components
+  - State can only be defined in class-based and functional components with hooks
   - Initialization of state in constructor
   - [Code inspiration](#counter-example)
   - [Exercise](#counter)
 
-Both props and state are plain JavaScript objects
 
 Teacher suggestion: 
-- Make a jquery app first and then change it into dom	
-- "Why react comes" - video - all students should watch this. 
+- Make a jquery app first and then change it to use react instead
 
+### Get started with react
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Get started with React</title>
+</head>
+<body>
+    <div id="root">Loading...</div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <script type="text/babel">
+        // Write react code with JSX here
+    </script>
+</body>
+</html>
+
+```
+### Get started with React and parcel.js
+- https://github.com/senner008/react-min-boilerplate-parcel
 
 ## Coding inspiration
 
@@ -51,47 +76,51 @@ Teacher suggestion:
 https://codesandbox.io/s/name-age-simple-react-dz32o
 
 ```js
-import React from "react";
-import ReactDOM from "react-dom";
+  import React from "react";
+  import ReactDOM from "react-dom";
 
-class UserItem extends React.Component {
-  render() {
-    const { name, age } = this.props;
+  function UserItem (props) {
+    
     return (
-      <li>
-        <h3>
-          {name}: {age}
-        </h3>
-      </li>
+        <li>
+          <h3>
+            {props.name}: {props.age}
+          </h3>
+        </li>
     );
   }
-}
-
-class UserList extends React.Component {
-  render() {
+    
+  function UserList (props)  {
+      
     return (
-      <ul>
-        {this.props.users.map(user => {
-          return <UserItem name={user.name} age={user.age} />;
-        })}
-      </ul>
+        <ul>
+            {
+              props.users.map(user => {
+                return <UserItem name={user.name} age={user.age} key={user.id} />;
+              });
+            }
+        </ul>
     );
   }
-}
+    
+  const users = [
+    {
+      id : 0,  
+      name: "Benjamin",
+      age: 32,
+    },
+    {
+      id : 1,
+      name: "Peter",
+      age: 43
+    }
+  ];
 
-const users = [
-  {
-    name: "Benjamin",
-    age: 32
-  },
-  {
-    name: "Peter",
-    age: 43
-  }
-];
+  ReactDOM.render(
+      <UserList users={users} />, 
+      document.getElementById("root")
+  );
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<UserList users={users} />, rootElement);
 
 ```
 
@@ -100,28 +129,23 @@ ReactDOM.render(<UserList users={users} />, rootElement);
 https://codesandbox.io/s/simple-counter-wvgxr
 
 ```js
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-class Counter extends React.Component {
-  state = {
-    counter: 0
-  };
-
-  increment = () => {
-    this.setState({ counter: this.state.counter + 1 });
-  };
-
-  render() {
-    return <button onClick={this.increment}>{this.state.counter}</button>;
-  }
+function Counter () {
+    
+    const [counterState, setCounterState] = useState(0);
+  
+    const increment = () => {
+      setCounterState(prev => prev +1)
+    };
+  
+    return <button onClick={increment}>{counterState}</button>;  
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<Counter />, rootElement);
+ReactDOM.render(<Counter />, document.getElementById("root"));
 
 ```
-
 
 ## Exercises
 
@@ -139,7 +163,7 @@ Example:
 ```
 
 ### UserItemExpanded
-Create a new component called `UserItemExpanded`. Render these user attributes aswell:
+Create a new component called `UserItemExpanded`. Render these user attributes as well:
 
 - Fullname
 - Adress
@@ -151,5 +175,12 @@ Create a new component called `UserItemExpanded`. Render these user attributes a
 ### Counter
 Expanding the Counter example, Add two new buttons:
 1. Reset button. Clicking this button will reset the counter
-2. Increment double. Clicking this button will double the counter. 
+2. Increment double. Clicking this button will double the counter.
+
+## Ekstra:
+
+### Fibonacci Counter
+Count the fibonacci row instead. Log each new count as an expanding list of numbers
+![alt text](https://github.com/senner008/Class11-React/blob/master/week1/fibo_counter.png "Logo Title Text 1")
+
 
