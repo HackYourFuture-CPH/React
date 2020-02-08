@@ -1,6 +1,6 @@
 # Lesson Plan - Advanced react
 
-## Forms
+## Forms and props.children
 Forms works out of the box exactly like plain html.
 
 but if we need to handle form submission in javascript and keep track of what data the user enters in the form, then we use [controlled inputs](#controlled-inputs)
@@ -12,19 +12,20 @@ but if we need to handle form submission in javascript and keep track of what da
     - The value
     - The onChange event handler
   - React controls the state of the input, not the browser
+  - The state is the 'single source of truth'
 - Using data fetching
-  - Setting up fetching in `componentDidMount`
+  - Setting up fetching in useEffect
   - Talk about loading states
 - Children
   - Make a simple example of using `props.children`. Fx the fancyborder component used in [this example](https://reactjs.org/docs/composition-vs-inheritance.html#containment)
 
 ## Exercise 1: Generic Modal using props.children
 
-- Create generic modal component. It's job is to simply center its cildren on the page
+- Create a generic modal component. It's job is to simply center its cildren on the page
 - Make a call to the yes/no api (https://yesno.wtf/api) and display one of two componenets as the child of the modal component:
 - 1. SubscriptionForm
 - 2. SubscriptionMessage
-- While the request is pending, the modal child should displa a Loading component.
+- While the request is pending, the modal child should be a Loader component which just displays a loading message
 
 Think about how to thoroughly separate and isolate the logic within each component. The modal children components should not be aware they are placed in a modal. 
 Likewise, the modal component should not be aware of the differences between its child components.
