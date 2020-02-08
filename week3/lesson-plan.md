@@ -14,7 +14,7 @@ but if we need to handle form submission in javascript and keep track of what da
   - React controls the state of the input, not the browser
   - The state is the 'single source of truth'
 - Using data fetching
-  - Setting up fetching in useEffect
+  - Setting up fetching in the 'useEffect' Hook
   - Talk about loading states
 - Children
   - Make a simple example of using `props.children`. Fx the fancyborder component used in [this example](https://reactjs.org/docs/composition-vs-inheritance.html#containment)
