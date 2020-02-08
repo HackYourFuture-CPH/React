@@ -21,7 +21,7 @@ but if we need to handle form submission in javascript and keep track of what da
 
 ## Exercise 1: Generic Modal using props.children
 
-- Create a generic modal component. It's job is to simply center its cildren on the page
+- Create a generic modal component. It's job is to simply center its children on the page
 - Make a call to the yes/no api (https://yesno.wtf/api) and display one of two componenets as the child of the modal component:
 - 1. SubscriptionForm
 - 2. SubscriptionMessage
