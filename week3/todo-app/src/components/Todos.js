@@ -12,7 +12,7 @@ function Todos() {
           .then(response => response.json());
         setTodos(todosList.slice(0,10));
       })();
-    },[null]);
+    },[]);
   
     const todosList = todos.map(todo => {
       return (
