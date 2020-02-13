@@ -4,10 +4,11 @@ export default function todoActions(setTodos) {
       toggle (id) {
         setTodos(todos => {
           return todos.map(todo => {
+            const todoCopy = {...todo}
             if (todo.id === id) {
-              todo.completed = !todo.completed
+              todoCopy.completed = !todoCopy.completed
             }
-            return todo;
+            return todoCopy;
           })
         })
       },
