@@ -9,7 +9,7 @@
   - Redux
 
 ## Context example
-```
+```js
   // App.js
 
   import React from 'react';
@@ -86,6 +86,25 @@
 - Parent group A should use your own name and Parent group B should only use the default.
 
 ## React.memo for performance
+
+[React.memo](https://reactjs.org/docs/react-api.htm)
+
+"If your function component renders the same result given the same props, you can wrap it in a call to React.memo for a performance boost in some cases by memoizing the result. This means that React will skip rendering the component, and reuse the last rendered result"
+
+```js
+  function MyComponent(props) {
+    /* render using props */
+  }
+  function areEqual(prevProps, nextProps) {
+    /*
+    return true if passing nextProps to render would return
+    the same result as passing prevProps to render,
+    otherwise return false
+    */
+  }
+  export default React.memo(MyComponent, areEqual);
+
+```
 
 ### Exercises with React.memo
 
