@@ -28,3 +28,6 @@ https://levelup.gitconnected.com/react-redux-hooks-useselector-and-usedispatch-f
 
 https://thoughtbot.com/blog/using-redux-with-react-hooks
 
+## React.memo and render performance:
+
+https://stackoverflow.com/questions/55787701/react-efficiently-update-object-in-array-with-usestate-hook
