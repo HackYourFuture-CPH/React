@@ -71,9 +71,9 @@
 ```
 ### Exercises with Context - Explain
 
-- How a props passed down using the context api?
+- How are props passed down using the context api?
 - What is the benefit?
-- How are nested (grandchild) able to cause changes in the parent component?
+- How are nested children (eg. grandchild) able to cause changes in the parent component?
 
 ### Exercises with Context
 1. Edit the above example. 
@@ -82,7 +82,8 @@
 - Use createContext and useContext to accomplish this.
 2. Replace the value being passed with an object instead of a boolean value. 
 - The object should have a firstname and a lastname.
-3. Set a default object to create context with firstname and lastname. 
+3. Remove the button from the GrandChild.
+- Set a default object to create context with firstname and lastname. 
 - Parent group A should use your own name and Parent group B should only use the default.
 
 ## React.memo for performance
