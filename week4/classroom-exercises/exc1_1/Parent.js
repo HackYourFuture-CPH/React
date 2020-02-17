@@ -15,7 +15,7 @@ export default function Parent (props) {
             <h3>answer is : {answer.toString()}</h3>
             <AnswerContext.Provider value={{answer, setAnswer}}>
                 <GroupContext.Provider value={props.group}>
-                    <Child group={props.group}/>
+                    <Child/>
                 </GroupContext.Provider>
             </AnswerContext.Provider>
         </div>
