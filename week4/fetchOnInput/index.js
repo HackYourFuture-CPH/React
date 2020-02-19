@@ -11,8 +11,13 @@ app.get('/', function(req, res) {
 });
 
 app.get('/comments', function (req, res) {
+
+    const filteredData = data.filter(comment => {
+        return comment.title.includes(req.query.title);
+    })
+ 
     res.header("Content-Type",'application/json');
-    res.send(JSON.stringify(data));
+    res.send(JSON.stringify(filteredData));
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -1,3 +1,12 @@
+body {
+    margin-left: 30px;
+}
+
 .loading {
-    
+    display : inline
+}
+
+ul {
+    list-style: none;
+    padding : 0;
 }
