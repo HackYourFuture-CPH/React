@@ -21,13 +21,16 @@ function CallApi (callback) {
     }      
 }
 
+function filterResult (str) {
+    return str.includes(api.currentInput)
+}
 
-function filterResult (result) {
+function makeHtml (result, filterFunc) {
     var makeHtml = "";
     var i = result.length -1;
     // this could also be done with filter and map
     while(i >= 0 ) {
-        if (result[i].title.includes(api.currentInput)) {
+        if (filterFunc(result[i].title)) {
             makeHtml += "<li>" + result[i].title + "</li>";
         }
         i--;
@@ -35,15 +38,27 @@ function filterResult (result) {
     return makeHtml;
 }
 
+function toggleLoading (flag) {
+    document.querySelector(".loading").innerHTML = flag ? "Loading..." : "";
+} 
+
+function setList (str) {
+    document.querySelector('ul').innerHTML = str;
+}
+
+
 // this callback will get executed when the results have arrived
 const api = CallApi((result) => {
-    document.querySelector('ul').innerHTML = filterResult(result);
+    toggleLoading(false);
+    setList(makeHtml(result, filterResult));
 });
 
 document.querySelector("input").addEventListener('keyup', function (e) {
     api.currentInput = e.target.value;
     // only make an api call if pending is set to false
     if (!api.pending) {
+        setList("");
+        toggleLoading(true);
         api.call(api.currentInput);
     }
 });
