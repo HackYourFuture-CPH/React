@@ -34,10 +34,14 @@ https://stackoverflow.com/questions/55787701/react-efficiently-update-object-in-
 
 ## Firebase authentication:
 
-- https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834
-- https://dev.to/emeka/securing-your-express-node-js-api-with-firebase-auth-4b5f
+- [Google oAuth in React](https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834)
+- [Firebase front- and backend](https://dev.to/emeka/securing-your-express-node-js-api-with-firebase-auth-4b5f)
+
+### Firebase official docs:
+
+ - https://firebase.google.com/docs/auth ( under sections : Web and Admin )
 
 ## Google oAuth signin buttons :
 
-- https://developers.google.com/identity/branding-guidelines
+- [Google oAuth buttons design](https://developers.google.com/identity/branding-guidelines)
 
