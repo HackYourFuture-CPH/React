@@ -11,6 +11,7 @@
 ## Exercise 1 Email and password:
  - Create a react application to manage the frontend part of firebase authentication:
  - Begin by setting up your project in firebase and add at least one user to your authentication database.
+ [Getting started with firebase web setup](https://firebase.google.com/docs/web/setup)
  - Refer to this example : [Firebase example in native js](https://github.com/senner008/express-firebase-authentication)
 
 ## Exercise 2 : Add Google oAuth
