@@ -31,3 +31,9 @@ https://thoughtbot.com/blog/using-redux-with-react-hooks
 ## React.memo and render performance:
 
 https://stackoverflow.com/questions/55787701/react-efficiently-update-object-in-array-with-usestate-hook
+
+## Firebase authentication:
+
+- https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834
+- https://dev.to/emeka/securing-your-express-node-js-api-with-firebase-auth-4b5f
+
