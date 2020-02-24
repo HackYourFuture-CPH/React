@@ -10,6 +10,14 @@ https://1drv.ms/u/s!AoI-8hQGtXUmnGxiTAfTGuEzk0B8?e=kep3TU
 
 https://1drv.ms/u/s!AoI-8hQGtXUmnHRcQriQQW7cfytC?e=qifpPM
 
+## Links to week 4 videos:
+
+https://1drv.ms/u/s!AoI-8hQGtXUmnQXQktxp_r344ZUl?e=6A2YSl
+
+## Links to week 5 videos:
+
+https://1drv.ms/u/s!AoI-8hQGtXUmnH-4Q-2SlhWOhf66?e=p83dqY
+
 ## Youtube React Hooks tutorial:
 
 https://www.youtube.com/watch?v=cF2lQ_gZeA8&list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A&index=1
