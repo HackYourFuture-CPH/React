@@ -14,6 +14,8 @@ https://1drv.ms/u/s!AoI-8hQGtXUmnHRcQriQQW7cfytC?e=qifpPM
 
 https://1drv.ms/u/s!AoI-8hQGtXUmnQXQktxp_r344ZUl?e=6A2YSl
 
+- In the the last video we talked about using the React.memo function to avoid calling each component and render on each keystroke. Render means calling some render logic, but doesn't necessarily mean it's updating the dom since it is using the "Virtual DOM" we talked about in week 1.
+
 ## Links to week 5 videos:
 
 https://1drv.ms/u/s!AoI-8hQGtXUmnH-4Q-2SlhWOhf66?e=p83dqY
