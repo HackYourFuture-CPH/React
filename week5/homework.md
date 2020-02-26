@@ -2,9 +2,14 @@
 
 ## Time Registration
 
-- Create the time registration app from week3 lesson plan. 
-- Only authenticated users should be allowed to use it
-- Use email and password authentication and google oAuth with firebase
+#### Create the time registration app from week3 lesson plan. 
+#### Only authenticated users should be allowed to use it.
+- This means that you can NOT use this api : https://gist.githubusercontent.com/benna100/5fd674171ea528d7cd1d504e9bb0ca6f/raw to get the shifts.
+- Instead you will have to send the shifts from your own backend. 
+- To authenticate the user, the token must be send to the backend and verified before sending back the content.
+- Please refer to this example to see how its done 
+- [Firebase front- and backend example](https://github.com/senner008/Firebase-React-Express.git)
+#### Use email and password authentication and google oAuth with firebase
 
 ## Hand in Homework:
 
