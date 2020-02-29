@@ -48,7 +48,7 @@ const api = CallApi((result) => {
     setList(makeHtml(result));
 });
 
-document.querySelector("input").addEventListener('keyup', function (e) {
+document.querySelector("input").addEventListener('input', function (e) {
     api.currentInput = e.target.value;
     // only make an api call if pending is set to false
     if (!api.pending) {
