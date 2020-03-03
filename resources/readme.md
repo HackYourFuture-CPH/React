@@ -59,3 +59,6 @@ https://stackoverflow.com/questions/55787701/react-efficiently-update-object-in-
 
 - [Firebase Video](https://1drv.ms/v/s!AoI-8hQGtXUmnH6BnMzKNhd5uNci?e=ppJwdQ)
 
+#### Article on JWT Tokens as used in Firebase authentication
+
+[A guide for adding JWT token-based authentication to your single page Node.js applications](https://medium.com/dev-bits/a-guide-for-adding-jwt-token-based-authentication-to-your-single-page-nodejs-applications-c403f7cf04f4)
