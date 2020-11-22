@@ -85,8 +85,9 @@ function WatchCount() {
 ```
 
 Now extend it with the following features:
-- Add a button that decrements the timer
+- Add a button that decrements the timer. What is observed?
 - Add a button that resets the counter to 0
+- Add an text input field an start typing in a long story. What is observed?
 
 ## Ekstra : 
 - A button that pauses the counter
