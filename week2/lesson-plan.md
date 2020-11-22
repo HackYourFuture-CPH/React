@@ -44,33 +44,17 @@
 
 ### Fibonacci
 
-```js
-function FiboCounter () {
-    
-    const [counterState, setCounterState] = useState([1]);
-  
-    const increment = () => {
-      setCounterState(prev => {
-          const pl = prev.length;
-          // the ?? means that it will use the right value if the left is "nullish" (undefined or null)
-          return [ ...prev, prev[pl -1] + (prev[pl -2] ?? 0)];
-      })
-    };
-
-    const logList = counterState
-        .map((log, index) => <div key={index}>{log}</div>)
-
-    return (
-        <>
-            <button onClick={increment}>{counterState.slice().pop()}</button>
-            {logList}  
-        </>
-    );  
-}
-
-ReactDOM.render(<FiboCounter />, document.getElementById("root"));
+```
+Fibonacci
+ - FibonacciIncrement
+ - FibonacciList
 
 ```
+## Exercise
+
+Create another version of the fibonacci counter. This time the behavior is split into 3 components. 
+The top level Fibonacci component holds the state of the fibonacci list.
+
 
 ## Exercise
 
@@ -98,10 +82,6 @@ function WatchCount() {
     );
   }
 
-ReactDOM.render(
-    <WatchCount/>, 
-    document.getElementById("root")
-);
 ```
 
 Now extend it with the following features:
