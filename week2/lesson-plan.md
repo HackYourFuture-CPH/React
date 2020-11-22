@@ -89,7 +89,7 @@ Now extend it with the following features:
 - Add a button that resets the counter to 0
 - Add an text input field an start typing in a long story. What is observed?
 
-## Ekstra : 
+## Extra : 
 - A button that pauses the counter
   - Clicking it should change the text so it says `start`. Clicking the button now should start the timer again and change the text to `pause`
   - Also, the counter should stop immediately. Hint : you need to return a clean up function from useEffect
