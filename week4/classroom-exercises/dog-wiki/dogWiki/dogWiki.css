@@ -1,0 +1,17 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.dog-list-name {
+    margin: 10px;
+    display: inline-block;
+}
+
+.input-field {
+    text-align: center;;
+}
+
+.breed-image {
+    text-align: center;;
+}
