@@ -1,14 +1,91 @@
 # Lesson Plan Week 4 - Managing state
 
-- Context
-  - Consumer
+- Recap exercises
+- Context Simple/Advanced
+  - createContext
   - Provider
-- Render props
+  - useContext
 - React.memo
 - Introduction to state management libraries
   - Redux
 
-## Context example
+## Simple Context example
+```js
+
+// Parent.js
+
+  import React, {createContext, useContext, useState} from 'react';
+  import "./context.css"; // context.css has a thick-border class
+
+  const AnswerContext = createContext();
+
+  export default function Parent () {
+
+      const [answer, setAnswer] = useState(true);
+
+      return (
+          <div className="thick-border">
+              <h2>Parent</h2>
+              <h3>answer is : {answer.toString()}</h3>
+              <AnswerContext.Provider value={{answer, setAnswer}}>
+                  <Child/>
+              </AnswerContext.Provider>
+          </div>
+      )
+  }
+
+  function Child () {
+
+      return (
+          <div className="thick-border">
+              <h2>Child</h2>
+              <GrandChild/>
+          </div>     
+      )
+  }
+
+  function GrandChild () {
+
+      const answer = useContext(AnswerContext);
+
+      return (
+          <div className="thick-border">
+              <h2>GrandChild</h2>
+              <button onClick={() => answer.setAnswer(prev => !prev)}>Toggle answer</button>
+          </div>
+      )
+  }
+
+```
+### Exercise with Simple Context example - Explain
+
+- How are props passed down using the context api?
+- What is the benefit?
+- How are nested children (eg. grandchild) able to cause changes in the parent component?
+
+## Recap Exercise with useState:
+
+Cat exercise : Cat names 
+ 1. Create three components with this structure:
+
+ - Main (parent component)
+  - CatForm (child component)
+  - CatList (child component)
+
+ 2. In the CatForm you have a single input field to enter a cat name.
+ 3. The Main component contains the list of cats entered.
+ 4. The CatList displays the list
+
+## Recap exercise with useEffect, data fetching and useState
+
+Dog exercise: Dog wiki
+ 1. Create a component with a useEffect Hook that calls an api to get a list of dog breeds:
+  - https://dog.ceo/dog-api/documentation/
+ 2. Create an input field where the user can enter a name of a breed on the list and have a random image shown
+ - https://dog.ceo/dog-api/documentation/breed
+
+
+## Advanced **Unfinished** Context example
 ```js
   // App.js
 
@@ -69,13 +146,8 @@
   }
 
 ```
-### Exercises with Context - Explain
 
-- How are props passed down using the context api?
-- What is the benefit?
-- How are nested children (eg. grandchild) able to cause changes in the parent component?
-
-### Exercises with Context
+### Exercises with Advanced **unfinished** Context example
 1. Edit the above example. 
 - Child component should NOT receive any props. 
 - Instead the group name be passed directly from Parent to GrandChild. 
