@@ -73,7 +73,7 @@ Cat exercise : Cat names
   - CatList (child component)
 
  2. In the CatForm you have a single input field to enter a cat name.
- 3. The Main component contains the list of cats entered.
+ 3. The Main component contains the state of the cats entered.
  4. The CatList displays the list
 
 ## Recap exercise with useEffect, data fetching and useState
