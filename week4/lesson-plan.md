@@ -86,7 +86,7 @@
 - Set a default object to create context with firstname and lastname. 
 - Parent group A should use your own name and Parent group B should only use the default.
 
-## React.memo for performance
+## EXTRA (if you are done with the context exercises): React.memo for performance
 
 [React.memo](https://reactjs.org/docs/react-api.htm)
 
@@ -111,7 +111,7 @@
 
 - Add memoization to your todo app. Each Todo component should only render when its changed.
 
-## Ekstra:
+## EXTRA EXTRA:
 
 ### Get started with Redux and React Hooks.
 
