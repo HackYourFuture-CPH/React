@@ -65,23 +65,23 @@ export function CatList({ cats }) {
 }
 ```
 
-### Cat app Feature 1 - add age 
+### Cat app feature 1 - add age 
 
-FEATURE: add both the name and the age of the cat
+- add both the name and the age of the cat
 
-### Cat app Feature 2 - update the age of a cat
+### Cat app feature 2 - update the age of a cat
 
-FEATURE: update previously added cat age
+- update previously added cat age
 
-### Cat app Feature 3 - filter by name 
+### Cat app feature 3 - filter by name 
 
-FEATURE: filter the cats by name
+- filter the cats by name
 
-### Cat app Feature 4 - sort by name and age 
+### Cat app feature 4 - sort by name and age 
 
-FEATURE: sort the list by name and age
+- sort the list by name and age
 
-### Cat app Feature 5 - toggle sort and filter
+### Cat app feature 5 - toggle sort and filter
 
-FEATURE: only show filter and sort functionality when there are more than 5 cats
+- only show filter and sort functionality when there are more than 5 cats
 
