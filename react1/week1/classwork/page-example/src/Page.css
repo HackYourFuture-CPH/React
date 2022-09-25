@@ -1,0 +1,14 @@
+body{margin:0}
+div {border: 1px solid;box-sizing: border-box; background-color:#EEE}
+
+.page {width: 100vw; height: 100vh}
+
+header, footer {width: 100vw; height: 60px}
+
+.sidebar, .main-content {
+  height: calc(100vh - 120px);
+  overflow-y: scroll;
+}
+
+.sidebar {width: 20%; float:left}
+.main-content {width: 80%; float:right}
