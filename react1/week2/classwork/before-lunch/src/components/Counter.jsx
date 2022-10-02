@@ -15,7 +15,7 @@ export default function Counter ({
     console.log('effect');
 
     const interval = setInterval(() => {
-      console.log('in effect interval', count);
+      // console.log('in effect interval', count);
       if(!paused)
         setCount(c => c + 1);
     }, 1000);
