@@ -18,7 +18,9 @@ export default function CounterList (){
   return (
     <>
       <button onClick={addCounter}>Add counter!</button>
-      {counterList.map(({ limit, id }) => <Counter limit={limit} key={id} />)} 
+      <ul>
+        {counterList.map(({ limit, id }) => <Counter limit={limit} key={id} />)} 
+      </ul>
     </>
   )
 }
