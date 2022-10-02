@@ -14,5 +14,10 @@ export default function Counter () {
 
   console.log('in render', count);
 
-  return <button onClick={handleClick} disabled={disabled}>{ count }</button>
+  return (
+    <>
+      {disabled && <span>Done!</span>}
+      <button onClick={handleClick} disabled={disabled}>{ count }</button>
+    </>
+  )
 }
