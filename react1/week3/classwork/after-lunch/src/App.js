@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 const API_URL = breed => {
   if(!breed)
@@ -11,20 +11,20 @@ function App() {
   const [src, setSrc] = useState(null);
   const [breed, setBreed] = useState('chihuahua');
 
-  async function fetchDog () {
+  const fetchDog =  useCallback(async () => {
     const response = await fetch(API_URL(breed));
     const { message } = await response.json();
     setSrc(message);
-  }
+  }, [breed]);
 
   useEffect(() => {
     fetchDog();
-  }, []);
+  }, [fetchDog]);
 
   return (
     <>
       <input type="text" value={breed} onChange={e => setBreed(e.target.value)}/>
-      <button onClick={fetchDog}>Fetch</button>
+      {/* <button onClick={fetchDog}>Fetch</button> */}
       {src && <img src={src} alt="a dog" width={"100%"}/>}
     </>
   );
