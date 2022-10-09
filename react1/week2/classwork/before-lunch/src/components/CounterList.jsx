@@ -16,12 +16,19 @@ export default function CounterList (){
     // console.log(counters);
   }
 
+  function deleteCounter(deleteId) {
+    setCounterList(counterList.filter(({ id }) => id !== deleteId));
+  }
+
   return (
     <>
       <button onClick={addCounter}>Add counter!</button>
       <button onClick={() => setPaused(!paused)}>{paused ? 'Play' : 'Pause'}</button>
       <ul>
-        {counterList.map(({ limit, id }) => <Counter limit={limit} key={id} paused={paused} />)} 
+        {counterList.map(({ limit, id }) => <Counter limit={limit} key={id} paused={paused}
+          onDelete={() => deleteCounter(id)}
+          />
+        )} 
       </ul>
     </>
   )

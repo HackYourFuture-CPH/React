@@ -4,6 +4,7 @@ import { useState } from 'react';
 export default function Counter ({
   limit = 60,
   paused: listPaused,
+  onDelete,
 }) {
   // console.log('render');
   const [count, setCount] = useState(0);
@@ -42,6 +43,7 @@ export default function Counter ({
     <li>
       {disabled && <span>Done!</span>}
       <button onClick={handleClick} disabled={disabled}>{paused ? 'Play' : 'Pause'} { count }/{ limit }</button>
+      <button onClick={onDelete}>Delete</button>
     </li>
   )
 }
