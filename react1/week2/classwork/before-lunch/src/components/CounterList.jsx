@@ -10,9 +10,10 @@ const counters = [
 export default function CounterList (){
   const [counterList, setCounterList] = useState(counters);
   const [paused, setPaused] = useState(false);
+  const [limit, setLimit] = useState(60);
 
   function addCounter () {
-    setCounterList(counterList.concat([{ id: Date.now() }]));
+    setCounterList(counterList.concat([{ id: Date.now(), limit }]));
     // console.log(counters);
   }
 
@@ -22,6 +23,7 @@ export default function CounterList (){
 
   return (
     <>
+      <input type="number" value={limit} onChange={e => setLimit(parseInt(e.target.value))} />
       <button onClick={addCounter}>Add counter!</button>
       <button onClick={() => setPaused(!paused)}>{paused ? 'Play' : 'Pause'}</button>
       <ul>
