@@ -3,10 +3,11 @@ import { useState } from 'react';
 
 export default function Counter ({
   limit = 60,
-  paused,
+  // paused,
 }) {
-  console.log('render');
+  // console.log('render');
   const [count, setCount] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const disabled = count >= limit;
   // console.log({ disabled });
@@ -24,7 +25,8 @@ export default function Counter ({
   }, [paused]);
 
   function handleClick () {
-    setCount(count + 1);
+    // setCount(count + 1);
+    setPaused(!paused);
     // console.log('in handler', count);
   }
 
@@ -33,7 +35,7 @@ export default function Counter ({
   return (
     <li>
       {disabled && <span>Done!</span>}
-      <button onClick={handleClick} disabled={disabled}>{ count }/{ limit }</button>
+      <button onClick={handleClick} disabled={disabled}>{paused ? 'Play' : 'Pause'} { count }/{ limit }</button>
     </li>
   )
 }
