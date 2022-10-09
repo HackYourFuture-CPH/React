@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Counter from './Counter';
 
 const counters = [
-  { id: '1', limit: 30 },
+  { id: '1', limit: 5 },
   { id: '2'}
 ];
 
@@ -12,7 +12,7 @@ export default function CounterList (){
   const [paused, setPaused] = useState(false);
 
   function addCounter () {
-    setCounterList(counterList.concat([{ id: '' + (counterList.length + 1) }]));
+    setCounterList(counterList.concat([{ id: Date.now() }]));
     // console.log(counters);
   }
 
