@@ -45,9 +45,9 @@ Teacher suggestion:
 
 [Flipped classroom videos](./preparation.md#flipped-classroom-videos)
 
-### Get started with React and parcel.js
+### Get started with React
 
-- https://github.com/senner008/react-min-boilerplate-parcel
+Use the [create-react-app](https://create-react-app.dev/docs/getting-started) command
 
 ## Coding inspiration
 
