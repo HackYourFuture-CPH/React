@@ -1,3 +1,7 @@
+
+> [!TIP]
+> This is a suggested lesson plan for this class. As long as you cover the below topics, feel free to use your own examples and exercises, or organize the lesson in the way you see fit.
+
 # Lesson Plan
 ## Part 1
 
@@ -22,6 +26,13 @@
 * Create a component that defines a page
 
 ## Part 2
+
+
+==========
+
+<center>This text will be centered</center>
+
+==========
 
 ### Writing your first static component (20 min)
 * Creating a Functional Component
