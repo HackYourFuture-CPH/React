@@ -1,9 +1,12 @@
 # Preparation
-- https://reactjs.org/docs/forms.html (20 min)
-- https://reactjs.org/docs/typechecking-with-proptypes.html (10 min)
-- [Children](https://codeburst.io/a-quick-intro-to-reacts-props-children-cb3d2fce4891) (15 min)
 
+### React
+- Read [Keeping Components Pure](https://react.dev/learn/keeping-components-pure) (10 min)
+- Read [Reacting to Input with State](https://react.dev/learn/reacting-to-input-with-state) (10 min)
+- Read [Synchronizing with Effects](https://react.dev/learn/synchronizing-with-effects) (10 min)
+- Read [Lifecycle of Reactive Effects](https://react.dev/learn/lifecycle-of-reactive-effects) (15 min)
+- Read [Using the Form Component](https://react.dev/reference/react-dom/components/form) (15 min)
+- Read [Using the Effect Hook](https://react.dev/reference/react/useEffect) (20 min)
 
-## Flipped classroom videos
-- [React 1 week 3 part 1](https://youtu.be/PAbUViIKYgg)
-- [React 1 week 3 part 2](https://youtu.be/t7BIokYvDwo)
+### Next.js
+- (Optional) Read [NextJS Server Side Rendering vs Static Generation](https://vercel.com/blog/nextjs-server-side-rendering-vs-static-generation) (10 min)

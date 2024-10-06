@@ -1,69 +1,58 @@
-> Please help us improve and share your feedback! If you find better tutorials
-> or links, please share them by [opening a pull request](https://github.com/HackYourFuture-CPH/React/pulls).
-
 <h1 align='center'>
  HackYourFuture - React
-</h1>   
+</h1>
+
+> [!NOTE]
+> Please help us improve and share your feedback! If you find better tutorials or links, please share them by [opening a pull request](https://github.com/HackYourFuture-CPH/React/pulls).
 
 <p align='center'>
-<img src='react-logo.png' width='600px'>  
+<img src='assets/react-logo.png' width='600px'>
 </p>   
 
 
-React is free an open-source frontend JavaScript library for building user interfaces based on UI components.
-
-This course is divided in 2 modules, of 3 and 2+1 week.
+React is free an open-source frontend JavaScript library for building user interfaces based on UI components. We will learn React to empower us to build even more complex applications faster.
 
 
-## Module goals:
+<p style="margin-top: 50px" align='center'>
+<img src='assets/nextjs-logo.png' width='400px'>  
+</p>
 
-### [React1 Module:](/react1/readme.md)   
-- Thinking the React way
-- Building components
-- Advanced React
+Next.js is a popular framework which further enhances the development process and performance of our web applications. Next.js builds on top of React by adding several features and optimizations that are often required in modern web applications. 
 
-### [React2 Module:](/react2/readme.md)
-- Managing state
-- Connecting to node
+> [!IMPORTANT]
+> The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :blush:
 
-\+ [Individual Project (Meal Sharing App)](https://github.com/HackYourFuture-CPH/React/blob/main/react2/readme.md#individual-project)
+## Module goals
 
+This course is divided in 2 modules
+
+### [React 1](/react1/readme.md) (3 weeks)
+Here we will focus on:
+ - Why we learn React
+ - How to write React components in **JSX**
+ - How to use **props** and **state** in components
+ - How to react to events using **hooks**
+
+### [React 2](/react2/readme.md) (2 weeks)
+In React 2 we will further expand our skills and learn:
+- How to use component libraries
+- How to connect to your Node.js API from the Node.js course
+- How to build scalable web applications using **Context**, **Reducer**, and **Routing**
+
+
+
+### Individual Project (Meal Sharing App)
+Additionally, you will also implement the UI for your [Meal Sharing App](https://github.com/HackYourFuture-CPH/React/blob/main/react2/readme.md#individual-project) using the skills you learn in this course. :rocket:
 
 ## Read up before we get started
+1. Watch the [React introductory video](https://www.youtube.com/watch?v=N3AkSS5hXMA)
+2. Read the [React landing page](https://react.dev)
+3. Read the [Next.js landing page](https://nextjs.org)
 
-Watch this video from Facebook about why they started React:
+# Beyond Next.js
 
-https://youtu.be/nYkdrAPrdcw
+Unfortunately, we won't be able to cover all areas of React in this course, but only the essentials. There are a lot of powerful tools out there for you to learn after you finish this course such as:
 
-Also be sure you're familiar with ES6-syntax. This is a handy reference of all features of ES6:
-
-http://es6-features.org
-
-Please _do not worry about understanding all_. However, do make sure you understand the following, as we'll be using them a lot:
-
-- http://es6-features.org/#Constants
-- http://es6-features.org/#ObjectMatchingShorthandNotation
-- http://es6-features.org/#RestParameter
-- http://es6-features.org/#SpreadOperator
-
-Read about React here:
-
-https://reactjs.org/
-
-## Real world example
-
-Have a look at Exemplary real world application built with React + Redux:
-
-https://github.com/gothinkster/react-redux-realworld-example-app
-
-_The HackYourFuture curriculum is subject to CC BY copyright. This means you can freely use our materials, but just make sure to give us credit for it :)_
-
-# Beyond React
-
-The following libraries are worth mentioning to use in conjunction with React:
-
-- **[FlowType](https://flowtype.org)** - a way to annotate ES6 with types, similar to TypeScript
-- **[Redux](https://flowtype.org)** - predictable (application) state container, a Flux implementation
-- **[Webpack](https://webpack.js.org)** - a JS packager, used by `create-react-app`
-- **[Babel](https://babeljs.io)** - a ES6+ to JS transpiler, also used by `create-react-app`
-- **[JSS](https://github.com/cssinjs/jss)** - a way to write CSS-like styles inside your component files
+- **[TypeScript](https://www.typescriptlang.org/)** - a way to annotate ES6 with types
+- **[Redux](https://redux.js.org)** - predictable (application) state container, a Flux implementation
+- **[Tailwind CSS](https://tailwindcss.com/)** - Open-source CSS framework

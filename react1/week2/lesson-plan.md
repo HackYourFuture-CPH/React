@@ -1,114 +1,166 @@
-# Lesson Plan - Building components
 
-- Stateful logic - Having logic around state
-- Stateful logic
-  - Using destructuring in React
-  - State vs. Props
-    - Seeting the state triggers a compenent call.
-    - How to determine if data should be props or state?
-      - Props are "configuration options" for components
-      - State is completely optional
-      - State increases complexity and reduces predictability
-      - Use props unless you definitely need to use state
-      - State is single-level only. Components can read and set their own state, but cannot read or set the state of their children
-    - Understand that we are not allowed to mutate the state.
-- List keys
-  - Render list first without adding the key. See the error
-  - Assignment of unique key to every item rendered in an array
-  - Keys help React identify which items have changed, are added, or are removed
-  - [Index should be avoided](https://medium.com/@robinpokorny/index-as-a-key-is-an-anti-pattern-e0349aece318)
-  - [Code inspiration](#todolist-updating-state-with-list)
-- Component life cycles
-  - [Using the effect hook](https://reactjs.org/docs/hooks-effect.html)
-  - Understand when useEffect is executed
-  - Understand how to "clean up" useEffect code
-  - Understand when "clean up" is run
 
-[Code inspiration](#counter)
 
-## Flipped classroom videos
+# Lesson Plan
 
-[Flipped classroom videos](./preparation.md#flipped-classroom-videos)
+## Part 1
 
-## Code inspiration
+### Introduction to Props (10 min)
+* What are props and why are they used?
+* Props as a way to make components flexible and reusable
+* Why props should never be changed within components (one-way data flow)
 
-### todolist (updating state with list)
+### Passing and reading Props (20 minutes)
+* How to pass props to components
+* reading props using `props.x` syntax
+* reading props using destructing syntax
+* forwarding props using spread syntax
 
-```js
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+### Using children Props (10 minutes)
+* What are children props
+* Creating wrapper components
 
-const initTodos = [
-  {
-    text: "clean room",
-  },
-  {
-    text: "do pushups",
-  },
-];
+### Conditionally rendering (10 minutes)
+* Conditional rendering using if/else
+* Conditional rendering using ternary operator `(<condition> ? <then> : <else>)` or `<condition> && <then>`
 
-export function TodoList() {
-  const [todosState, setTodosState] = useState(initTodos);
 
-  const addTodo = () => {
-    const newTodo = { text: "learn React" };
-    setTodosState((prevTodos) => {
-      return [...prevTodos, newTodo];
-    });
-  };
 
-  const todoItems = todosState.map((todo) => (
-    <TodoItem text={todo.text}></TodoItem>
-  ));
 
-  return (
-    <div className="App">
-      <button onClick={addTodo}>Add todo</button>
-      {todoItems}
-    </div>
-  );
-}
 
-function TodoItem({ text }) {
-  return <li>{text}</li>;
-}
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<TodoList />, rootElement);
-```
+## Part 2
 
-## Exercise
+### Introduction to State (5 min)
+* What is state and when to use it
+* Differences between props and state
 
-1. Add an id to the todo list objects to deal with the key error
-2. Add a method to delete a todo by using an input field to enter the id to be deleted.
+### useState Hook Syntax (10 minutes)
+* Introduction to hooks
+* How to declare and use state with useState
 
-### Counter
+### Updating state (10 minutes)
+* Updating State arrays
+* Updating State objects
 
-First understand the code in this component:
+### React rendering triggers (5 minutes)
+* What causes React to re-render components
+* Using functional updates for consecutive state changes
 
-```js
-function WatchCount() {
-  const [count, setCount] = useState(0);
+### Dynamically rendering content (10 minutes)
+* Conditional rendering using if/else
+* Conditional rendering using ternary operator `(<condition> ? <then> : <else>)` or `<condition> && <then>`
+* Rendering multiple items using `.map()`
 
-  useEffect(() => {
-    setTimeout(() => {
-      setCount((prev) => prev + 1);
-    }, 1000);
-  });
+### Sharing State between components (5 min)
+* Lifting state up to parent
 
-  return <div>{count}</div>;
-}
-```
 
-Now extend it with the following features:
 
-- Add a button that decrements the counter. What is observed?
-- Add a button that resets the counter to 0
-- Add a text input field and start typing in a long story. What is observed?
 
-### Extra
 
-- A button that pauses the counter
-  - Clicking it should change the text so it says `start`. Clicking the button now should start the timer again and change the text to `pause`
-  - Also, the counter should stop immediately. Hint : you need to return a clean up function from useEffect
-- An input field that lets you set the speed of the counter. The speed should be reflected immediately on keypress and the counter should pause when entering invalid input.
+
+
+
+
+
+
+
+
+
+
+### Creating and running a Next.js app (10 min)
+* Creating a new app using `npx create-next-app@latest`
+* folder structure
+* Running the app using `npm run dev`
+
+### Basic Routing (10 minutes)
+* Explanation of routes
+* Creating subfolders in `app` directory with `page.jsx` file.
+* Create a component that defines a page
+
+### Writing your first static component (20 min)
+* Creating a Functional Component
+* Returning JSX
+   * Single Root Element Requirement
+   * Fragments
+* Using components inside components
+
+### Use {} to execute JS inside JSX (10 minutes)
+* Embedding Expressions in JSX
+* Conditional Rendering
+
+### Setting attributes (5 min)
+* HTML attributes
+* className
+
+### Importing / exporting .jsx (5 min)
+* defauls exports and named exports
+
+### Importing .css (5 minutes)
+* Global styles vs. component-specific styles
+* CSS modules in Next.js
+
+# Exercises
+
+## Part 1
+
+### 1. Create a reusable Button component (10 minutes)
+
+1. Create a new component called `Button`.
+2. Accept `text` and `onClick` as props.
+3. Render a button element with the `text` prop as its content.
+4. Attach the `onClick` prop to the button's `onClick` event handler.
+
+### 2. Create a Card component (15 minutes)
+
+1. Create a new component called `Card`.
+2. Accept `title`, `description`, and `imageUrl` as props.
+3. Use destructuring to extract the props.
+4. Render a card-like structure with the provided `title`, `description`, and `imageUrl`.
+
+### 3. Create a Layout component (10 minutes)
+
+1. Create a new component called `Layout`.
+2. Accept `children` as a prop.
+3. Render a layout structure (e.g., header, main content area, footer) with the `children` prop rendered inside the main content area.
+
+### 4. Implement conditional rendering (10 minutes)
+
+1. Create a new component called `ToggleContent`.
+2. Accept a `show` prop as a boolean value.
+3. Accept `content` as a prop, which can be a string or a React element.
+4. Render the `content` prop only if the `show` prop is true, otherwise render a message or nothing.
+
+## Part 2
+
+### 5. Create a Counter component (10 minutes)
+
+1. Create a new component called `Counter`.
+2. Use the `useState` hook to manage a count state variable.
+3. Implement functions to increment and decrement the count.
+4. Render the current count value and buttons to call the increment and decrement functions.
+
+### 6. Build a Todo List component (15 minutes)
+
+1. Create a new component called `TodoList`.
+2. Use the `useState` hook to manage an array of todo items.
+3. Implement a function to add a new todo item to the array.
+4. Implement a function to remove a todo item from the array.
+5. Render the list of todo items, an input field to add new todos, and buttons to remove todos.
+
+### 7. Develop a Form component (10 minutes)
+
+1. Create a new component called `Form`.
+2. Use the `useState` hook to manage the state of form input fields.
+3. Implement a function to handle form submission.
+4. Render input fields for each form field and a submit button.
+
+### 8. Create a ParentChild component set (10 minutes)
+
+1. Create a new component called `Parent`.
+2. Create another component called `Child`.
+3. In the `Parent` component, use the `useState` hook to manage a state variable.
+4. Implement a function to update the state variable.
+5. Render the `Child` component and pass the state variable and the update function as props.
+6. In the `Child` component, render the data received from the parent and a button to call the update function.
