@@ -4,33 +4,231 @@
 
 ### Adding Event Handlers (15 min)
 * Passing event handlers as Props
+
+```jsx
+function Button({ onClick }) {
+  return <button onClick={onClick}>Click me</button>;
+}
+
+function App() {
+  const handleClick = () => alert('Button clicked!');
+  return <Button onClick={handleClick} />;
+}
+```
+
 * event handler naming conventions
+```jsx 
+function App() {
+  const handleInputChange = (e) => {
+    console.log('Input changed to:', e.target.value);
+  };
+
+  return <input onChange={handleInputChange} />;
+}
+```
+📌 Convention: handle<EventName> or on<EventName>
 
 ### Managing Form Inputs (15 min)
 * Adding form inputs
+```jsx
+function App() {
+  const [name, setName] = React.useState('');
+
+  return (
+    <input 
+      type="text" 
+      value={name} 
+      onChange={(e) => setName(e.target.value)} 
+      placeholder="Enter name"
+    />
+  );
+}
+```
 * Submitting inputs
+```jsx
+function App() {
+  const [name, setName] = React.useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Submitted name: ${name}`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input value={name} onChange={(e) => setName(e.target.value)} />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+```
 * Performing simple input validation
+```jsx
+function App() {
+  const [email, setEmail] = React.useState('');
+  const [error, setError] = React.useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email.includes('@')) {
+      setError('Invalid email address');
+    } else {
+      setError('');
+      alert(`Submitted email: ${email}`);
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input 
+        value={email} 
+        onChange={(e) => setEmail(e.target.value)} 
+        placeholder="Enter email"
+      />
+      <button type="submit">Submit</button>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+    </form>
+  );
+}
+```
 
 ### Rendering multiple components (10 min)
 * Rendering components using `map()`
-* `key` property
+```jsx
+function App() {
+  const fruits = ['Apple', 'Banana', 'Cherry'];
 
+  return (
+    <ul>
+      {fruits.map((fruit, index) => (
+        <li key={index}>{fruit}</li>
+      ))}
+    </ul>
+  );
+}
+```
+* `key` property
+```jsx
+const items = [{ name: 'Pen' }, { name: 'Pencil' }];
+
+function App() {
+  return (
+    <ul>
+      {items.map(item => (
+        <li key={item.name}>{item.name}</li>
+      ))}
+    </ul>
+  );
+}
+```
 
 ## Part 2
 
 ### Introduction to Hooks (10 min)
 * Rules of Hooks
+```jsx
+function App() {
+  const [count, setCount] = React.useState(0); 
+
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
+}
+```
 * Life cycles
+
+
 * Effects for synchronization
+```jsx
+function App() {
+  const [message, setMessage] = React.useState('');
+
+  React.useEffect(() => {
+    setMessage('Component mounted!');
+  }, []);
+
+  return <p>{message}</p>;
+}
+```
 
 ### How to use `useEffect` (15 min)
 * Usage of `useEffect`
+```jsx
+function App() {
+  const [message, setMessage] = React.useState('');
+
+  React.useEffect(() => {
+    setMessage('Component mounted!');
+  }, []);
+
+  return <p>{message}</p>;
+}
+```
 * dependencies of effect (onMount)
+```jsx
+function App() {
+  const [name, setName] = React.useState('');
+
+  React.useEffect(() => {
+    console.log('Name changed:', name);
+  }, [name]);
+
+  return <input value={name} onChange={(e) => setName(e.target.value)} />;
+}
+```
 * cleanup after effect
+```jsx
+function Timer() {
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      console.log('Tick');
+    }, 1000);
+
+    return () => clearInterval(timer); // cleanup
+  }, []);
+
+  return <p>Timer running... check console</p>;
+}
+```
 
 ### Connecting to APIs (10 min)
 * Calling async APIs using effects
+```jsx
+function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://api.example.com/data');
+      const json = await response.json();
+      setData(json);
+    }
+
+    fetchData();
+  }, []);
+
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+}
+```
 * Implementing initial page load with loading wheel
+```jsx
+function App() {
+  const [data, setData] = React.useState(null);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    async function fetchData() {
+      const response = await fetch('https://api.example.com/data');
+      const json = await response.json();
+      setData(json);
+      setLoading(false);
+    }
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
+}
+```
 
 
 ### Introduction to Meal Sharing app (5 min)
