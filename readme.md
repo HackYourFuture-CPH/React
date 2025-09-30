@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This repo has been archived and is no longer in use. Please check out the new [Program](https://github.com/HackYourFuture-CPH/program) for up-to-date material.
+
 <h1 align='center'>
  HackYourFuture - React
 </h1>
